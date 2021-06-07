@@ -615,19 +615,44 @@ header .landing a {
 .our-team .row {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (260px)[auto-fill];
-      grid-template-columns: repeat(auto-fill, 260px);
   row-gap: 40px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .our-team .row {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .our-team .row {
+    -ms-grid-columns: (40%)[2];
+        grid-template-columns: repeat(2, 40%);
     -webkit-box-pack: space-evenly !important;
         -ms-flex-pack: space-evenly !important;
             justify-content: space-evenly !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .our-team .row {
+    -ms-grid-columns: (30%)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 30%);
+    -webkit-box-pack: space-evenly !important;
+        -ms-flex-pack: space-evenly !important;
+            justify-content: space-evenly !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .our-team .row {
+    -ms-grid-columns: (23%)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 23%);
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
   }
 }
 
@@ -639,31 +664,23 @@ header .landing a {
 }
 
 .our-team .employee .img {
-  height: 320px;
   position: relative;
 }
 
 .our-team .employee img {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  height: 320px;
   width: 100%;
   -o-object-fit: fill;
      object-fit: fill;
 }
 
-.our-team .employee p {
-  line-height: 1.5;
-  padding: 20px;
-}
-
-.our-team .employee .img::after {
-  background-color: rgba(255, 228, 0, 0.7);
-  width: 100%;
-  height: 20%;
+.our-team .employee .overlay {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  bottom: 4px;
+  background-color: rgba(255, 228, 0, 0.7);
+  height: 18%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -673,25 +690,17 @@ header .landing a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-weight: lighter;
+}
+
+.our-team .employee .overlay span {
   font-size: 18px;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
+  font-weight: lighter;
 }
 
-.our-team .employee:first-child .img::after {
-  content: "Leonardo DiCaprio";
-}
-
-.our-team .employee:nth-child(2) .img::after {
-  content: "Tom Cruise";
-}
-
-.our-team .employee:nth-child(3) .img::after {
-  content: "Keanoo Revees";
-}
-
-.our-team .employee:nth-child(4) .img::after {
-  content: "Brad Pitt";
+.our-team .employee p {
+  line-height: 1.5;
+  padding: 20px;
 }
 
 .our-team .brief {
